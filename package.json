@@ -1,0 +1,28 @@
+{
+  "name": "loco-metrics",
+  "version": "0.1.0",
+  "description": "locomotor metrics utility",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seikho/loco-metrics.git"
+  },
+  "keywords": [
+    "loco",
+    "metrics"
+  ],
+  "author": "Carl Winkler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seikho/loco-metrics/issues"
+  },
+  "homepage": "https://github.com/seikho/loco-metrics#readme",
+  "preferGlobal": true,
+  "dependencies": {
+    "commander": "^2.9.0",
+    "minimist": "^1.2.0"
+  }
+}
