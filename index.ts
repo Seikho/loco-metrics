@@ -1,8 +1,8 @@
 var date = new Date();
-var defaultOutput = `${date.getUTCFullYear()}-${date.getMonth()-${date.getDate()-${date.getSeconds()}`;
+var defaultOutput = `${date.getUTCFullYear()}-${date.getMonth()}-${date.getDate()}-${date.getSeconds()}`;
 
 
-var options = {
+var options: Options = {
 	frequency: 1,
 	stereotypic: false,
 	input: '',
