@@ -8,10 +8,16 @@ abstract class Extractor {
 	public metric: string = '';
 
 	process(data: Array<Sample>) {
-		
+		data.forEach(datum => {
+			this.prev = this.succ;
+			this.succ = datum;
+			this.parse(datum);
+		});
 	}
 	
 	save() {
 		
 	}
+
+	abstract parse(sample: Sample): void;
 }
