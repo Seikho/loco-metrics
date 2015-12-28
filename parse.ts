@@ -1,8 +1,9 @@
+import Promise = require('bluebird');
 import rl = require('readline');
 import fs = require('fs');
 export = parse;
 
-async function parse(filename: string) {
+function parse(filename: string) {
 	var p = new Promise<{ date: Date, sample: string }[]>((resolve, reject) => {
 		
 		var input = fs.createReadStream(filename);

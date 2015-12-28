@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "locomotor metrics utility",
   "main": "index.js",
+  "bin": {
+    "loco-metrics": "bin/loco-metrics"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
@@ -23,6 +26,7 @@
   "homepage": "https://github.com/seikho/loco-metrics#readme",
   "preferGlobal": true,
   "dependencies": {
+    "bluebird": "^3.1.1",
     "commander": "^2.9.0",
     "minimist": "^1.2.0"
   },
