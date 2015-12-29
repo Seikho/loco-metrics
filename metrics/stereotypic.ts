@@ -5,7 +5,8 @@ class Sterotypic extends Extractor {
     constructor(options: Options) {
         super(options);
         
-        this.metric = 'stereotypic';
+        this.metric = 'Stereotypic Movement';
+        
     }
     
     private count: number = 0;
@@ -46,7 +47,7 @@ class Sterotypic extends Extractor {
             return;
         }
         
-        this.aggregate++;
+        this.aggregateCount++;
     }
     
     isRepeated(sample: number[]) {

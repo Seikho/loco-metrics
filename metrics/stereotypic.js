@@ -9,12 +9,43 @@ var Sterotypic = (function (_super) {
     function Sterotypic(options) {
         _super.call(this, options);
         this.count = 0;
-        this.metric = 'stereotypic';
+        this.metric = 'Stereotypic Movement';
     }
     Sterotypic.prototype.parse = function (sample) {
-        if (sample[7] === 0)
+        if (this.first == null) {
+            this.first = sample;
             return;
-        console.log(++this.count, sample);
+        }
+        if (this.second == null) {
+            if (this.equals(sample, this.prev.sample)) {
+                return;
+            }
+            this.second = sample;
+            return;
+        }
+        if (!this.isRepeated(sample)) {
+            this.reset();
+            return;
+        }
+        var stillTooLong = this.equals(sample, this.prev.sample) && this.count === this.options.stereotypic;
+        if (stillTooLong) {
+            this.reset();
+            return;
+        }
+        var hasntMoved = this.equals(sample, this.prev.sample);
+        if (hasntMoved) {
+            this.count++;
+            return;
+        }
+        this.aggregateCount++;
+    };
+    Sterotypic.prototype.isRepeated = function (sample) {
+        return this.equals(sample, this.first) || this.equals(sample, this.second);
+    };
+    Sterotypic.prototype.reset = function () {
+        this.first = null;
+        this.second = null;
+        this.count = 0;
     };
     return Sterotypic;
 })(Extractor);
