@@ -4,7 +4,7 @@
   "description": "locomotor metrics utility",
   "main": "index.js",
   "bin": {
-    "loco-metrics": "bin/loco-metrics"
+    "loco-metrics": "bin/loco-metrics.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
