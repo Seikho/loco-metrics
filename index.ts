@@ -2,7 +2,7 @@ import Commander = require('commander');
 import metrics = require('./metrics');
 
 var date = new Date();
-var defaultOutput = `${date.getUTCFullYear()}-${date.getMonth()}-${date.getDate()}-${date.getSeconds()}`;
+var defaultOutput = `${date.getUTCFullYear()}-${date.getMonth()+1}-${date.getDate()}-${date.getSeconds()}`;
 
 var options: Options = {
     bin: 5,

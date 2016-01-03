@@ -1,7 +1,7 @@
 var Commander = require('commander');
 var metrics = require('./metrics');
 var date = new Date();
-var defaultOutput = date.getUTCFullYear() + "-" + date.getMonth() + "-" + date.getDate() + "-" + date.getSeconds();
+var defaultOutput = date.getUTCFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getSeconds();
 var options = {
     bin: 5,
     frequency: 1,
