@@ -97,7 +97,7 @@ abstract class Extractor {
                 }
 
                 var filename = this.getFilename();
-                fs.writeFileSync(filename, lines.join('\n'));
+                fs.writeFileSync(filename, lines.join('\r\n'));
 
                 console.log(`Saved to ${filename}`);
                 return filename;

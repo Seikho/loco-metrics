@@ -82,7 +82,7 @@ var Extractor = (function () {
                 lines.push((_this.aggregates.length + 1) + "\t" + _this.aggregateCount + "\t" + _this.aggregateSampleCount);
             }
             var filename = _this.getFilename();
-            fs.writeFileSync(filename, lines.join('\n'));
+            fs.writeFileSync(filename, lines.join('\r\n'));
             console.log("Saved to " + filename);
             return filename;
         });
