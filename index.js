@@ -4,15 +4,15 @@ var date = new Date();
 var defaultOutput = date.getUTCFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + "-" + date.getSeconds();
 var options = {
     bin: 5,
-    frequency: 1,
+    frequency: 115,
     stereotypic: 0,
     input: '',
     output: defaultOutput
 };
 function frequency(value) {
     var freq = Math.abs(Number(value));
-    if (freq < 1) {
-        throw new Error('Invalid sample frequency provided. Must be <= 1');
+    if (freq < 60) {
+        throw new Error('Invalid sample frequency provided. Must be <= 60');
     }
     options.frequency = freq;
     return freq;

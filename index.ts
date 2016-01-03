@@ -6,7 +6,7 @@ var defaultOutput = `${date.getUTCFullYear()}-${date.getMonth()+1}-${date.getDat
 
 var options: Options = {
     bin: 5,
-	frequency: 1,
+	frequency: 115,
 	stereotypic: 0,
 	input: '',
 	output: defaultOutput
@@ -14,8 +14,8 @@ var options: Options = {
 
 export function frequency(value: number) {
 	var freq = Math.abs(Number(value));
-	if (freq < 1) {
-		throw new Error('Invalid sample frequency provided. Must be <= 1');
+	if (freq < 60) {
+		throw new Error('Invalid sample frequency provided. Must be <= 60');
 	}
 
 	options.frequency = freq;

@@ -6,7 +6,7 @@ export = Extractor;
 
 abstract class Extractor {
     constructor(public options: Options) {
-        this.samplesPerBin = this.options.frequency * 60 * this.options.bin;
+        this.samplesPerBin = this.options.frequency * this.options.bin;
     }
 
     private callback: () => void = null;
@@ -86,13 +86,13 @@ abstract class Extractor {
                 var lines = [
                     this.metric,
                     `Input file: ${path.basename(this.options.input)}`,
-                    `Samples per bin: ${this.samplesPerBin} | Sample Frequency: ${this.options.frequency} | Total Samples: ${this.samples.length}`,
+                    `Samples per bin: ${this.samplesPerBin} | Samples/minute: ${this.options.frequency} | Total Samples: ${this.samples.length}`,
                     `Bin#\tCounts\tSamples`
                 ];
 
                 this.aggregates.forEach((val, i) => lines.push(`${i + 1}\t${val.counts}\t${val.sample}`));
 
-                if (this.aggregateCount > 1) {
+                if (this.aggregateSampleCount > 1) {
                     lines.push(`${this.aggregates.length + 1}\t${this.aggregateCount}\t${this.aggregateSampleCount}`);
                 }
 

@@ -16,7 +16,7 @@ var Extractor = (function () {
         this.currentBin = 1;
         this.samplesPerBin = 0;
         this.metric = 'metric';
-        this.samplesPerBin = this.options.frequency * 60 * this.options.bin;
+        this.samplesPerBin = this.options.frequency * this.options.bin;
     }
     Extractor.prototype.read = function () {
         var _this = this;
@@ -74,11 +74,11 @@ var Extractor = (function () {
             var lines = [
                 _this.metric,
                 ("Input file: " + path.basename(_this.options.input)),
-                ("Samples per bin: " + _this.samplesPerBin + " | Sample Frequency: " + _this.options.frequency + " | Total Samples: " + _this.samples.length),
+                ("Samples per bin: " + _this.samplesPerBin + " | Samples/minute: " + _this.options.frequency + " | Total Samples: " + _this.samples.length),
                 "Bin#\tCounts\tSamples"
             ];
             _this.aggregates.forEach(function (val, i) { return lines.push((i + 1) + "\t" + val.counts + "\t" + val.sample); });
-            if (_this.aggregateCount > 1) {
+            if (_this.aggregateSampleCount > 1) {
                 lines.push((_this.aggregates.length + 1) + "\t" + _this.aggregateCount + "\t" + _this.aggregateSampleCount);
             }
             var filename = _this.getFilename();
