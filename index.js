@@ -45,7 +45,8 @@ exports.bin = bin;
 function run() {
     var input = Commander.args[0];
     if (!input) {
-        throw new Error('No input file was provided');
+        console.log('No input file was provided. See `loco-metrics --help`');
+        return;
     }
     options.input = input;
     if (options.stereotypic) {
